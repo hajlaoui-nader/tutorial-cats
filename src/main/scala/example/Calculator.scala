@@ -13,6 +13,6 @@ object Calculator {
    * - combine the different T using |+|
    */
   def add[T](items: List[T])(implicit m: Monoid[T]): T = {
-    ???
+    items.foldLeft(Monoid[T].empty)(Monoid[T].combine)
   }
 }
